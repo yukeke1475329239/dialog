@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出框</title>
+    <style>
+*{
+    margin:0;padding:0;
+    list-style: none;
+}
+.mark{
+    width: 100%;
+    position: absolute;
+    background:#666;
+    background:rgba(000,0,0,0.5);
+    
+}
+.dialog{
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    background:plum;
+    margin:auto;
+    left:0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+}
+.con{
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    color:#fff;
+    font-size: 20px;
+}
+.dialog p{
+  position: absolute;
+  right:0;
+  top:0;
+  width: 20px;
+  height: 20px;
+  background:#ccc;
+  opacity:1;
+}
+.dialog span{
+    display:inline-block;
+    width: 100px;
+    height: 30px;
+    background:deeppink;
+    margin-top:90px;
+    line-height: 30px;
+    margin-left:15px;
+    background:rgba(000,0,0,0.3);
+    border-radius:10px; 
+    cursor:pointer;
+}
+
+    </style>
+</head>
+<body>
+<ul>
+    <li>0001<button>删除1</button></li>
+    <li>0002<button>删除2</button></li>
+    <li>0003<button>删除3</button></li>
+    <li>0004<button>删除4</button></li>
+    <li>0005<button>删除5</button></li>
+</ul>
+<!-- <div class="mark"><div class="dialog"></div></div>  -->   
+<script src="js/jquery1.7.js"></script>
+<script src="js/dialog.js"></script>
+<script src="js/dialog2.js"></script>
+<script>
+ $("button").on("click",function(){
+    $(this).dialog({
+        content:"您确定要删除吗?",
+        but:["确定","取消"]
+    })
+ })   
+// var but=document.getElementsByTagName("button");
+//     for(var i=0;i<but.length;i++){
+//         but[i].onclick=function(){
+//             new Dialog({
+//                 content:"您确定要删除吗?",
+//                 but:["确定","取消"]
+//             })
+//         }
+//     }
+</script>
+</body>
+</html>
